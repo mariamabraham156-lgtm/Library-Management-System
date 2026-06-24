@@ -10,6 +10,8 @@ import com.library.model.Book;
 import com.library.util.DatabaseConnection;
 
 public class BookDAO {
+
+//ADDING BOOK
     
     public boolean addBook(Book book) { 
 
@@ -39,6 +41,9 @@ public class BookDAO {
 
         }
     }
+
+// LIST ALL BOOKS
+
     public List<Book> getAllBooks() {
 
         List<Book> books = new ArrayList<>();
@@ -74,6 +79,8 @@ public class BookDAO {
             return books;
         }
 
+// GET BOOK BY ID
+
     public Book getBookById(int bookId) {
 
         String sql = "SELECT * FROM books WHERE book_id = ?";
@@ -108,6 +115,9 @@ public class BookDAO {
 
         return null;
     }
+
+// UPDATE BOOK 
+
     public boolean updateBook(Book book) {
 
         String sql = "UPDATE books SET title=?, author=?, isbn=?, genre=?, status=? WHERE book_id=?";
@@ -135,6 +145,9 @@ public class BookDAO {
             return false;
         }
     }
+
+//DELETE BOOK
+
     public boolean deleteBook(int bookId) {
 
         String sql = "DELETE FROM books WHERE book_id = ?";

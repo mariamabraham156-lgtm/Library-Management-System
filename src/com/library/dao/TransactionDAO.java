@@ -12,7 +12,7 @@ import com.library.util.DatabaseConnection;
 
 public class TransactionDAO {
 
- // BORROWED STATEMENT 
+ // BORROW STATEMENT 
 
     public boolean borrowBook(int transactionId, int userId,int bookId){
 
@@ -43,29 +43,39 @@ public class TransactionDAO {
 
 // RETURN STATEMENT
 
-    public boolean returnBook(int transactionId){
+    public boolean returnBook(int transactionId) {
 
-        String sql = "UPDATE transactions SET return_date=?, status=?, WHERE transaction_id=?";
+        String sql =
+                "UPDATE transactions SET return_date=?, status=? WHERE transaction_id=?";
 
-        try{
+        try {
 
-            Connection conn = DatabaseConnection.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql);
+            Connection conn =
+                    DatabaseConnection.getConnection();
 
-            pstmt.setDate(1,new Date(System.currentTimeMillis()));
+            PreparedStatement pstmt =
+                    conn.prepareStatement(sql);
 
-            pstmt.setString(2,"Returned");
-            pstmt.setInt(3,transactionId);
+            pstmt.setDate(
+                    1,
+                    new Date(System.currentTimeMillis())
+            );
 
-            int rowsAffected = pstmt.executeUpdate();
+            pstmt.setString(2, "Returned");
+
+            pstmt.setInt(3, transactionId);
+
+            int rowsAffected =
+                    pstmt.executeUpdate();
 
             return rowsAffected > 0;
 
-        } catch(Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
             return false;
         }
+
         
     }
 

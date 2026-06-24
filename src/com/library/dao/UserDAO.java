@@ -12,6 +12,8 @@ import com.library.util.DatabaseConnection;
 
 public class UserDAO {
 
+//ADD USER
+
     public boolean addUser(User user){
 
         String sql = "INSERT INTO users(user_id, name, email, phoneno) VALUES(?, ?, ?, ?)";
@@ -38,6 +40,9 @@ public class UserDAO {
 
         }
     }
+
+//LIST ALL USERS
+
     public List<User> getAllUsers() {
 
         List<User> users = new ArrayList<>();
@@ -69,6 +74,8 @@ public class UserDAO {
 
         return users;
     }
+
+//GET USER BY ID
 
     public User getUserbyId(int userId) {
 
@@ -102,6 +109,8 @@ public class UserDAO {
 
         return null;
     } 
+
+//UPDATE USER
     
     public boolean updateUser(User user){
 
@@ -128,6 +137,8 @@ public class UserDAO {
             return false;
         }
     }
+
+//DELETE USER
 
     public boolean deleteUser(int userId){
 
