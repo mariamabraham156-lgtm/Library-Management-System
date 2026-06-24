@@ -38,7 +38,7 @@ public class UpdateBookFrame extends JFrame{
 
         bookIdField.setBounds(150,30,180,25);
 
-        bookIdField.setEnabled(false);
+        bookIdField.setEditable(false);
 
         add(bookIdField);
 

@@ -28,8 +28,13 @@ public class DashboardFrame extends JFrame {
 
         JButton transactionBtn = new JButton("View Transaction");
 
-        
+        JButton deleteBookBtn = new JButton("Delete Book");
+
+        JButton listBooksBtn = new JButton("List Books");
+
+        panel.add(listBooksBtn);
         panel.add(addBookBtn);
+        panel.add(deleteBookBtn);
         panel.add(updateBookBtn);
         panel.add(addUserBtn);
         panel.add(borrowBookBtn);
@@ -45,6 +50,14 @@ public class DashboardFrame extends JFrame {
 
         updateBookBtn.addActionListener(e ->{
             new UpdateBookFrame();
+        });
+
+        deleteBookBtn.addActionListener(e ->{
+            new DeleteBookFrame();
+        });
+
+        listBooksBtn.addActionListener(e -> {
+            new ListBookFrame();
         });
 
         setVisible(true);
