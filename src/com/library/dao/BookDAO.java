@@ -13,7 +13,7 @@ public class BookDAO {
 
 //ADDING BOOK
     
-    public boolean addBook(Book book) { 
+    public boolean addBook(Book book) {
 
         String sql = "INSERT INTO books(book_id, title, author, isbn, genre, status) VALUES (?, ?, ?, ?, ?, ?)";
 

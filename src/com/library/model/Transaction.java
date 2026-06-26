@@ -68,7 +68,7 @@ public class Transaction{
     public String toString(){
         return "BorrowTransaction{" +
                 "transactionId=" + transactionId +
-                ", userId=" + userId + 
+                ", userId=" + userId +
                 ", bookId=" + bookId +
                 ", borrowDate=" + borrowDate +
                 ", returnDate=" + returnDate +

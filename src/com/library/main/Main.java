@@ -1,5 +1,7 @@
 package com.library.main;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,9 +14,17 @@ import com.library.model.Librarian;
 import com.library.model.Library;
 import com.library.model.User;
 
+
+// import com.library.gui.DashboardFrame;
+// import com.library.util.DatabaseConnection;
+
 public class Main {
 
-    public static void main(String[] args) {
+public static void main(String[] args) {
+
+        //         new DashboardFrame();
+//         DatabaseConnection.getConnection();
+
 
         // =========================
         // BOOK TESTING
@@ -36,15 +46,15 @@ public class Main {
 
         if (bookResult) {
 
-            System.out.println(
-                    "Book Added Successfully"
-            );
+        System.out.println(
+                "Book Added Successfully"
+        );
 
         } else {
 
-            System.out.println(
-                    "Book Not Added"
-            );
+        System.out.println(
+                "Book Not Added"
+        );
         }
 
         // =========================
@@ -66,15 +76,15 @@ public class Main {
 
         if (userResult) {
 
-            System.out.println(
-                    "User Added Successfully"
-            );
+        System.out.println(
+                "User Added Successfully"
+        );
 
         } else {
 
-            System.out.println(
-                    "User Not Added"
-            );
+        System.out.println(
+                "User Not Added"
+        );
         }
 
         // =========================
@@ -86,19 +96,19 @@ public class Main {
 
         if (foundUser != null) {
 
-            System.out.println(
-                    "\nUser Found:"
-            );
+        System.out.println(
+                "\nUser Found:"
+        );
 
-            System.out.println(
-                    foundUser
-            );
+        System.out.println(
+                foundUser
+        );
 
         } else {
 
-            System.out.println(
-                    "User Not Found"
-            );
+        System.out.println(
+                "User Not Found"
+        );
         }
 
         // =========================
@@ -117,15 +127,15 @@ public class Main {
 
         if (borrowResult) {
 
-            System.out.println(
-                    "Book Borrowed Successfully"
-            );
+        System.out.println(
+                "Book Borrowed Successfully"
+        );
 
         } else {
 
-            System.out.println(
-                    "Borrow Failed"
-            );
+        System.out.println(
+                "Borrow Failed"
+        );
         }
 
         // =========================
@@ -137,32 +147,32 @@ public class Main {
 
         for (Transaction t : transactions) {
 
-            System.out.println(
-                    "Transaction ID : "
-                            + t.gettransactionId());
+        System.out.println(
+                "Transaction ID : "
+                        + t.gettransactionId());
 
-            System.out.println(
-                    "User ID : "
-                            + t.getuserId());
+        System.out.println(
+                "User ID : "
+                        + t.getuserId());
 
-            System.out.println(
-                    "Book ID : "
-                            + t.getbookId());
+        System.out.println(
+                "Book ID : "
+                        + t.getbookId());
 
-            System.out.println(
-                    "Borrow Date : "
-                            + t.getborrowDate());
+        System.out.println(
+                "Borrow Date : "
+                        + t.getborrowDate());
 
-            System.out.println(
-                    "Return Date : "
-                            + t.getreturnDate());
+        System.out.println(
+                "Return Date : "
+                        + t.getreturnDate());
 
-            System.out.println(
-                    "Status : "
-                            + t.getstatus());
+        System.out.println(
+                "Status : "
+                        + t.getstatus());
 
-            System.out.println(
-                    "--------------------");
+        System.out.println(
+                "--------------------");
         }
 
         // =========================
@@ -174,15 +184,15 @@ public class Main {
 
         if (returnResult) {
 
-            System.out.println(
-                    "Book Returned Successfully"
-            );
+        System.out.println(
+                "Book Returned Successfully"
+        );
 
         } else {
 
-            System.out.println(
-                    "Return Failed"
-            );
+        System.out.println(
+                "Return Failed"
+        );
         }
 
         // =========================
@@ -198,32 +208,32 @@ public class Main {
 
         for (Transaction t : transactions) {
 
-            System.out.println(
-                    "Transaction ID : "
-                            + t.gettransactionId());
+        System.out.println(
+                "Transaction ID : "
+                        + t.gettransactionId());
 
-            System.out.println(
-                    "User ID : "
-                            + t.getuserId());
+        System.out.println(
+                "User ID : "
+                        + t.getuserId());
 
-            System.out.println(
-                    "Book ID : "
-                            + t.getbookId());
+        System.out.println(
+                "Book ID : "
+                        + t.getbookId());
 
-            System.out.println(
-                    "Borrow Date : "
-                            + t.getborrowDate());
+        System.out.println(
+                "Borrow Date : "
+                        + t.getborrowDate());
 
-            System.out.println(
-                    "Return Date : "
-                            + t.getreturnDate());
+        System.out.println(
+                "Return Date : "
+                        + t.getreturnDate());
 
-            System.out.println(
-                    "Status : "
-                            + t.getstatus());
+        System.out.println(
+                "Status : "
+                        + t.getstatus());
 
-            System.out.println(
-                    "--------------------");
+        System.out.println(
+                "--------------------");
         }
         Librarian librarian =
         new Librarian(
@@ -265,7 +275,7 @@ public class Main {
         );
 
 
-    }
+}
 
-    
+
 }

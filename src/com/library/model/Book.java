@@ -86,7 +86,7 @@ public class Book {
                 ", isbn='" + isbn + '\'' +
                 ", genre='" + genre + '\'' +
                 ", status='" + status + '\'' +
-                '}';  
+                '}';
                 
                 
 }
