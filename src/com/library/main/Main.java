@@ -1,278 +1,323 @@
 package com.library.main;
 
+// import com.library.gui.DashboardFrame;
 
+// import java.util.ArrayList;
+// import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.library.dao.BookDAO;
-import com.library.dao.TransactionDAO;
-import com.library.dao.UserDAO;
-import com.library.model.Book;
-import com.library.model.Transaction;
-import com.library.model.Librarian;
-import com.library.model.Library;
-import com.library.model.User;
+// import com.library.dao.BookDAO;
+// import com.library.dao.TransactionDAO;
+// import com.library.dao.UserDAO;
+// import com.library.model.Book;
+// import com.library.model.Transaction;
+// import com.library.model.Librarian;
+// import com.library.model.Library;
+// import com.library.model.User;
 
 
 // import com.library.gui.DashboardFrame;
 // import com.library.util.DatabaseConnection;
 
-public class Main {
+import com.library.gui.LoginFrame;
 
+public class Main {
 public static void main(String[] args) {
 
-        //         new DashboardFrame();
-//         DatabaseConnection.getConnection();
+        // new DashboardFrame();
+        // DatabaseConnection.getConnection();
 
 
-        // =========================
-        // BOOK TESTING
-        // =========================
+        javax.swing.SwingUtilities.invokeLater(() -> {
 
-        Book book = new Book(
-                104,
-                "Java Basics",
-                "James Gosling",
-                "ISBN1012",
-                "Programming",
-                "Available"
-        );
+        new LoginFrame().setVisible(true);
 
-        BookDAO bookDao = new BookDAO();
+        });
 
-        boolean bookResult =
-                bookDao.addBook(book);
 
-        if (bookResult) {
+//             // =========================
+//             // BOOK TEST
+//             // =========================
 
-        System.out.println(
-                "Book Added Successfully"
-        );
+//         Book book = new Book(
+//                 104,
+//                 "Java Basics",
+//                 "James Gosling",
+//                 "ISBN1012",
+//                 "Programming",
+//                 "Available"
+//         );
 
-        } else {
+//         BookDAO bookDao = new BookDAO();
 
-        System.out.println(
-                "Book Not Added"
-        );
-        }
+//         boolean bookResult =
+//                 bookDao.addBook(book);
 
-        // =========================
-        // USER TESTING
-        // =========================
+//         if (bookResult) {
 
-        UserDAO userDao =
-                new UserDAO();
+//         System.out.println(
+//                 "Book Added Successfully"
+//         );
 
-        User user = new User(
-                11,
-                "Athulya",
-                "athulyaa@gmail.com",
-                "9876543220"
-        );
+//         } else {
 
-        boolean userResult =
-                userDao.addUser(user);
+//         System.out.println(
+//                 "Book Not Added"
+//         );
+//         }
 
-        if (userResult) {
+//         // =========================
+//         // USER TESTING
+//         // =========================
 
-        System.out.println(
-                "User Added Successfully"
-        );
+//         UserDAO userDao =
+//                 new UserDAO();
 
-        } else {
+//         User user = new User(
+//                 11,
+//                 "Athulya",
+//                 "athulyaa@gmail.com",
+//                 "9876543220"
+//         );
 
-        System.out.println(
-                "User Not Added"
-        );
-        }
+//         boolean userResult =
+//                 userDao.addUser(user);
 
-        // =========================
-        // GET USER TEST
-        // =========================
+//         if (userResult) {
 
-        User foundUser =
-                userDao.getUserbyId(11);
+//         System.out.println(
+//                 "User Added Successfully"
+//         );
 
-        if (foundUser != null) {
+//         } else {
 
-        System.out.println(
-                "\nUser Found:"
-        );
+//         System.out.println(
+//                 "User Not Added"
+//         );
+//         }
 
-        System.out.println(
-                foundUser
-        );
+//         // =========================
+//         // GET USER TEST
+//         // =========================
 
-        } else {
+//         User foundUser =
+//                 userDao.getUserbyId(11);
 
-        System.out.println(
-                "User Not Found"
-        );
-        }
+//         if (foundUser != null) {
 
-        // =========================
-        // BORROW BOOK TEST
-        // =========================
+//         System.out.println(
+//                 "\nUser Found:"
+//         );
 
-        TransactionDAO transactionDao =
-                new TransactionDAO();
+//         System.out.println(
+//                 foundUser
+//         );
 
-        boolean borrowResult =
-                transactionDao.borrowBook(
-                        11,
-                        11,
-                        104
-                );
+//         } else {
 
-        if (borrowResult) {
+//         System.out.println(
+//                 "User Not Found"
+//         );
+//         }
 
-        System.out.println(
-                "Book Borrowed Successfully"
-        );
+//         // =========================
+//         // BORROW BOOK TEST
+//         // =========================
 
-        } else {
 
-        System.out.println(
-                "Borrow Failed"
-        );
-        }
+//         TransactionDAO transactionDao =
+//                 new TransactionDAO();
 
-        // =========================
-        // VIEW TRANSACTIONS
-        // =========================
+//         boolean borrowResult =
+//                 transactionDao.borrowBook(
+//                         11,
+//                         11,
+//                         104
+//                 );
 
-        List<Transaction> transactions =
-                transactionDao.getAllTransactions();
+//         if (borrowResult) {
 
-        for (Transaction t : transactions) {
+//         System.out.println(
+//                 "Book Borrowed Successfully"
+//         );
 
-        System.out.println(
-                "Transaction ID : "
-                        + t.gettransactionId());
+//         } else {
 
-        System.out.println(
-                "User ID : "
-                        + t.getuserId());
+//         System.out.println(
+//                 "Borrow Failed"
+//         );
+//         }
 
-        System.out.println(
-                "Book ID : "
-                        + t.getbookId());
+//         // =========================
+//         // VIEW TRANSACTIONS
+//         // =========================
 
-        System.out.println(
-                "Borrow Date : "
-                        + t.getborrowDate());
+//         List<Transaction> transactions =
+//                 transactionDao.getAllTransactions();
 
-        System.out.println(
-                "Return Date : "
-                        + t.getreturnDate());
+//         for (Transaction t : transactions) {
 
-        System.out.println(
-                "Status : "
-                        + t.getstatus());
+//         System.out.println(
+//                 "Transaction ID : "
+//                         + t.gettransactionId());
 
-        System.out.println(
-                "--------------------");
-        }
+//         System.out.println(
+//                 "User ID : "
+//                         + t.getuserId());
 
-        // =========================
-        // RETURN BOOK TEST
-        // =========================
+//         System.out.println(
+//                 "Book ID : "
+//                         + t.getbookId());
 
-        boolean returnResult =
-                transactionDao.returnBook(11);
+//         System.out.println(
+//                 "Borrow Date : "
+//                         + t.getborrowDate());
 
-        if (returnResult) {
+//         System.out.println(
+//                 "Return Date : "
+//                         + t.getreturnDate());
 
-        System.out.println(
-                "Book Returned Successfully"
-        );
+//         System.out.println(
+//                 "Status : "
+//                         + t.getstatus());
 
-        } else {
+//         System.out.println(
+//                 "--------------------");
+//         }
 
-        System.out.println(
-                "Return Failed"
-        );
-        }
+//         // =========================
+//         // RETURN BOOK TEST
+//         // =========================
 
-        // =========================
-        // VIEW TRANSACTIONS AGAIN
-        // =========================
+//         boolean returnResult =
+//                 transactionDao.returnBook(11);
 
-        System.out.println(
-                "\nAfter Return:"
-        );
+//         if (returnResult) {
 
-        transactions =
-                transactionDao.getAllTransactions();
+//         System.out.println(
+//                 "Book Returned Successfully"
+//         );
 
-        for (Transaction t : transactions) {
+//         } else {
 
-        System.out.println(
-                "Transaction ID : "
-                        + t.gettransactionId());
+//         System.out.println(
+//                 "Return Failed"
+//         );
+//         }
 
-        System.out.println(
-                "User ID : "
-                        + t.getuserId());
+//         // =========================
+//         // VIEW TRANSACTIONS AGAIN
+//         // =========================
 
-        System.out.println(
-                "Book ID : "
-                        + t.getbookId());
+//         System.out.println(
+//                 "\nAfter Return:"
+//         );
 
-        System.out.println(
-                "Borrow Date : "
-                        + t.getborrowDate());
+//         transactions =
+//                 transactionDao.getAllTransactions();
 
-        System.out.println(
-                "Return Date : "
-                        + t.getreturnDate());
+//         for (Transaction t : transactions) {
 
-        System.out.println(
-                "Status : "
-                        + t.getstatus());
+//         System.out.println(
+//                 "Transaction ID : "
+//                         + t.gettransactionId());
 
-        System.out.println(
-                "--------------------");
-        }
-        Librarian librarian =
-        new Librarian(
-                100,
-                "Admin",
-                "admin@library.com",
-                "9999999999"
-                );
+//         System.out.println(
+//                 "User ID : "
+//                         + t.getuserId());
 
-        System.out.println(
-                librarian.getname()
-        );
+//         System.out.println(
+//                 "Book ID : "
+//                         + t.getbookId());
 
-        librarian.addBook();
-        librarian.removeBook();
-        librarian.manageUsers();
-        librarian.viewTransactions();
+//         System.out.println(
+//                 "Borrow Date : "
+//                         + t.getborrowDate());
 
-        List<Book> books = new ArrayList<>();
-        books.add(book);
+//         System.out.println(
+//                 "Return Date : "
+//                         + t.getreturnDate());
 
-        List<User> users = new ArrayList<>();
-        users.add(user);
+//         System.out.println(
+//                 "Status : "
+//                         + t.getstatus());
 
-        Library library =
-                new Library(
-                        books,
-                        users
-                );
+//         System.out.println(
+//                 "--------------------");
+//         }
+//         Librarian librarian =
+//         new Librarian(
+//                 100,
+//                 "Admin",
+//                 "admin@library.com",
+//                 "9999999999"
+//                 );
 
-        System.out.println(
-                "Books Count : "
-                + library.getBooks().size()
-        );
+//         System.out.println(
+//                 librarian.getname()
+//         );
 
-        System.out.println(
-                "Users Count : "
-                + library.getUsers().size()
-        );
+//         librarian.addBook();
+//         librarian.removeBook();
+//         librarian.manageUsers();
+//         librarian.viewTransactions();
+
+//         List<Book> books = new ArrayList<>();
+//         books.add(book);
+
+//         List<User> users = new ArrayList<>();
+//         users.add(user);
+
+//         Library library =
+//                 new Library(
+//                         books,
+//                         users
+//                 );
+
+//         System.out.println(
+//                 "Books Count : "
+//                 + library.getBooks().size()
+//         );
+
+//         System.out.println(
+//                 "Users Count : "
+//                 + library.getUsers().size()
+//         );
+
+
+//         System.out.println("\n=== SEARCH TEST ===");
+
+//         List<Book> searchResults =
+//                         bookDao.searchBooks(
+//                                 "title",
+//                                 "Java"
+//                         );
+
+//                 for (Book b : searchResults) {
+
+//                 System.out.println(
+//                         "Book ID : " + b.getBookId()
+//                 );
+
+//                 System.out.println(
+//                         "Title : " + b.getTitle()
+//                 );
+
+//                 System.out.println(
+//                         "Author : " + b.getAuthor()
+//                 );
+
+//                 System.out.println(
+//                         "Genre : " + b.getGenre()
+//                 );
+
+//                 System.out.println(
+//                         "ISBN : " + b.getIsbn()
+//                 );
+
+//                 System.out.println(
+//                         "--------------------"
+//                 );
+//                 }
 
 
 }

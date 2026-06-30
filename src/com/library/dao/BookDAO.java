@@ -116,7 +116,7 @@ public class BookDAO {
         return null;
     }
 
-// UPDATE BOOK 
+// UPDATE BOOK
 
     public boolean updateBook(Book book) {
 
@@ -169,6 +169,41 @@ public class BookDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+// SEARCH BOOKS
+
+    public List<Book> searchBooks(String field, String value) {
+
+        List<Book> books = new ArrayList<>();
+
+        String sql = "SELECT * FROM books WHERE " + field + " LIKE ?";
+
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, "%" + value + "%");
+
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                Book book = new Book();
+
+                book.setBookId(rs.getInt("book_id"));
+                book.setTitle(rs.getString("title"));
+                book.setAuthor(rs.getString("author"));
+                book.setGenre(rs.getString("genre"));
+                book.setIsbn(rs.getString("isbn"));
+
+                books.add(book);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return books;
     }
     
 }
